@@ -12,11 +12,10 @@ platforms:
   - name: centos-6.7
 
 suites:
- - name: default
-   run_list:
-    - recipe[workstation::default]
-   verifier:
-    inspec_test:
-      - test/recipes
-   attributes:
-
+  - name: default
+    run_list:
+      - recipe[workstation::setup]
+    verifier:
+      inspec_tests:
+        - test/recipes
+    attributes:
